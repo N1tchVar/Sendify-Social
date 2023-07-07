@@ -8,7 +8,7 @@ import { getAuth, GoogleAuthProvider } from 'firebase/auth'
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: process.env.API_KEY,
+  apiKey: "AIzaSyD5gt6ORQYS9HKura-ixEWCJg9PfEOtGFw",
   authDomain: "fir-social-b21c1.firebaseapp.com",
   projectId: "fir-social-b21c1",
   storageBucket: "fir-social-b21c1.appspot.com",

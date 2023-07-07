@@ -21,7 +21,7 @@ export interface Posts {
 
 const MAX_DESCRIPTION_WORDS = 25;
 
-const Home: React.FC<Props> =  (isAuth) => {
+const Home: React.FC<Props> =  (isAuth ) => {
   const [postLists, setPostList] = useState<Posts[]>();
   const postCollectionRef = collection(db, "posts");
 
@@ -60,7 +60,7 @@ const Home: React.FC<Props> =  (isAuth) => {
             <div className="deletePost ">
                     {isAuth && auth.currentUser?.uid === post.author.id && (
                       <button className='text-2xl  absolute mx:left-1/3 bg-orange-600 p-2 z-10 rounded-full hover:bg-orange-800 hover:p-3 tranisiton-all duration-300'
-                        onClick={(e) => {
+                        onClick={() => {
                           deletePost(post.id, post.imageUrl);
                         }}
                       >
@@ -70,9 +70,9 @@ const Home: React.FC<Props> =  (isAuth) => {
               </div>
             <Link to={`/post/${post.id}`}>
               <div className='hover:bg-orange-600 hover:rotate-2 duration-500 transition-all flex rounded-xl flex-col justify-center items-center w-full bg-black text-white p-10'>
-                <h1 className='text-md text-center font-bold'>{post.title}</h1>
+                <h1 className='text-sm font-bold'>{post.title}</h1>
                 <img className='w-96 p-5' src={post.imageUrl}></img>
-                <div className='p-2 text-md text-center'>{shortenedDescription}</div>
+                <div className='p-2 text-md'>{shortenedDescription}</div>
                
                 <h3 className='text-right' >@<span className="text-orange-500 font-bold">{post.author.name}</span></h3>
               </div>

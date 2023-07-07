@@ -36,9 +36,9 @@ const App: React.FC = () => {
       
       </nav>
       <Routes>
-        <Route path="/" element={<Home isAuth={false}/>} />
+        <Route path="/" element={<Home isAuth={false} />} />
         <Route path="/post/:id" element={<PostPage postId={""} />} />
-        <Route path="/" element={<Home isAuth={false}/>} />
+        <Route path="/" element={<Home isAuth={false} />} />
         <Route path="/createpost" element={<CreatePost isAuth={isAuth} />} />
         <Route path="/login" element={<Login setIsAuth={setIsAuth} />} />
       </Routes>
